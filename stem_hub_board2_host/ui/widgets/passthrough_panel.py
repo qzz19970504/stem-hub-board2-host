@@ -310,7 +310,7 @@ class PassthroughPanel(QFrame):
     def _apply_mode_style(self, active: bool) -> None:
         color = theme.ACCENT if active else theme.FG_SECONDARY
         self.mode_hint.setStyleSheet(
-            f"color: {color}; font-weight: {'700' if active else '600'};"
+            f"color: {color}; font-weight: {'700' if active else '400'};"
             " background: transparent;"
         )
 

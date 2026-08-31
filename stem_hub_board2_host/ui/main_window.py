@@ -372,7 +372,7 @@ class MainWindow(QMainWindow):
             color = theme.STATUS_OK
         hint.setText(text)
         hint.setStyleSheet(
-            f"color: {color}; font-weight: 600; background: transparent; border: none;"
+            f"color: {color}; background: transparent; border: none;"
         )
 
     # ---- 串口 ----

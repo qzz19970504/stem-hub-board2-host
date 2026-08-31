@@ -109,7 +109,7 @@ QLabel#toolbarLabel {
     border: none;
     font-family: "{{FONT_DISPLAY}}";
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
@@ -234,7 +234,7 @@ QPushButton {
     border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
     border-radius: {{CONTROL_RADIUS}}px;
     padding: 8px 18px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 QPushButton:hover {
@@ -411,7 +411,6 @@ QLabel#secondary {
     color: {{FG_SECONDARY}};
     font-family: "{{FONT_MONO}}";
     font-size: 13px;
-    font-weight: 600;
 }
 
 /* ---- 状态芯片 (STATUS 卡) ---- */
@@ -423,7 +422,6 @@ QLabel#statusChip {
     padding: 7px 12px;
     font-family: "{{FONT_MONO}}";
     font-size: 13px;
-    font-weight: 700;
 }
 
 QLabel#statusChip[chipState="on"] {

@@ -96,7 +96,7 @@ class AtConsole(QFrame):
         self.send_btn.setObjectName("primary")
         self.send_btn.setCursor(Qt.CursorShape.PointingHandCursor)
         self.send_btn.setFixedHeight(theme.CONTROL_HEIGHT)
-        self.send_btn.setMinimumWidth(110)
+        self.send_btn.setMinimumWidth(120)
         f_btn = QFont(theme.FONT_DISPLAY)
         f_btn.setPointSize(14)
         f_btn.setBold(True)
@@ -175,7 +175,7 @@ class AtConsole(QFrame):
             message_color = theme.FG_PRIMARY
         self.log_view.appendHtml(
             f'<span style="color: {color}; font-weight: 700;">{escaped_prefix}</span> '
-            f'<span style="color: {message_color}; font-weight: 600; font-family: \'{theme.FONT_MONO}\';">'
+            f'<span style="color: {message_color}; font-family: \'{theme.FONT_MONO}\';">'
             f"{escaped_text}</span>"
         )
         scrollbar = self.log_view.verticalScrollBar()

@@ -20,7 +20,7 @@ class ThemeToggleButton(QAbstractButton):
     ) -> None:
         super().__init__(parent)
         self._scheme = scheme
-        self.setFixedSize(106, theme.CONTROL_HEIGHT_SM)
+        self.setFixedSize(118, theme.CONTROL_HEIGHT_SM)
         self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.setFocusPolicy(Qt.FocusPolicy.StrongFocus)
         self.setAccessibleName("Toggle day and night appearance")
