@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# 打包与临时
+build/
+dist/
+env/
+
+# IDE
+.vscode/
+.idea/
+.qoder/

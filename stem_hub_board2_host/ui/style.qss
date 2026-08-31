@@ -1,0 +1,512 @@
+/* stem-hub board2 host — 深色霓虹主题 (移植自 stem-hub-host) */
+
+QMainWindow {
+    background-color: {{BG_OUTER}};
+}
+
+QWidget {
+    background-color: {{BG_BASE}};
+    color: {{FG_PRIMARY}};
+}
+
+/* 根容器: 设备面板轮廓 */
+QFrame#rootContainer {
+    background: {{BG_BASE}};
+    border: none;
+    border-radius: 0;
+}
+
+QFrame#passthroughLayout {
+    background: transparent;
+    border: none;
+}
+
+/* ---- 状态栏 (默认隐藏) ---- */
+QStatusBar {
+    background: {{BG_OUTER}};
+    color: {{FG_SECONDARY}};
+    border: none;
+}
+
+/* ---- Tab (顶部带 cyan 下划线) ---- */
+QTabWidget::pane {
+    border: none;
+    background: {{BG_BASE}};
+    margin-top: -1px;
+}
+
+QTabBar {
+    background: transparent;
+    border: none;
+    qproperty-drawBase: 0;
+}
+
+QTabBar::tab {
+    background: transparent;
+    color: {{FG_TERTIARY}};
+    padding: 10px 18px;
+    border: none;
+    font-family: "{{FONT_DISPLAY}}";
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    min-width: 100px;
+}
+
+QTabBar::tab:selected {
+    color: {{ACCENT}};
+    border-bottom: {{FOCUS_BORDER_WIDTH}}px solid {{ACCENT}};
+}
+
+QTabBar::tab:hover:!selected {
+    color: {{FG_PRIMARY}};
+}
+
+/* ---- 卡片 ---- */
+QFrame#card {
+    background: {{BG_CARD}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER}};
+    border-radius: {{CARD_RADIUS}}px;
+}
+
+QFrame#toolbarPanel,
+QFrame#subPanel {
+    background: {{BG_CONTROL}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+    border-radius: {{SUBCARD_RADIUS}}px;
+}
+
+QFrame#nmosRow {
+    background: {{BG_SUB_CARD}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER}};
+    border-radius: {{CONTROL_RADIUS}}px;
+}
+
+QFrame#commandBar {
+    background: {{BG_SUB_CARD}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+    border-radius: {{COMMAND_RADIUS}}px;
+}
+
+QFrame#divider {
+    background: {{BORDER}};
+    border: none;
+}
+
+/* ---- Serial connection ---- */
+QLabel#connectionBadge {
+    color: {{FG_SECONDARY}};
+    background: {{BG_CARD}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+    border-radius: {{CONTROL_RADIUS}}px;
+    padding-left: {{SERIAL_BADGE_TEXT_INSET}}px;
+    letter-spacing: 1px;
+}
+
+QLabel#toolbarLabel {
+    color: {{FG_PRIMARY}};
+    background: transparent;
+    border: none;
+    font-family: "{{FONT_DISPLAY}}";
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+QLabel#connectionBadge[connectionState="connected"] {
+    color: {{ACCENT}};
+    background: {{BG_TEAL_DARK}};
+    border-color: {{BORDER_TEAL}};
+}
+
+QLabel#connectionBadge[connectionState="opening"] {
+    color: {{STATUS_WARN}};
+    border-color: {{STATUS_WARN_BORDER}};
+}
+
+QLabel#connectionBadge[connectionState="error"] {
+    color: {{STATUS_ERROR}};
+    border-color: {{STATUS_ERROR_BORDER}};
+}
+
+QPushButton#connectBtn {
+    color: {{FG_ON_ACCENT}};
+    background: {{STATUS_OK}};
+    border: {{BORDER_WIDTH}}px solid {{STATUS_OK_BORDER}};
+    border-radius: {{CONTROL_RADIUS}}px;
+    padding: 0 16px;
+    letter-spacing: 1px;
+}
+
+QPushButton#connectBtn:hover {
+    background: {{STATUS_OK_HOVER}};
+}
+
+QPushButton#connectBtn:pressed {
+    background: {{STATUS_OK_PRESSED}};
+}
+
+QPushButton#connectBtn[connectionState="opening"],
+QPushButton#connectBtn[connectionState="connected"],
+QPushButton#connectBtn[connectionState="error"] {
+    color: {{FG_ON_DANGER}};
+    background: {{DANGER_ACTION}};
+    border-color: {{STATUS_ERROR}};
+}
+
+QPushButton#connectBtn[connectionState="opening"]:hover,
+QPushButton#connectBtn[connectionState="connected"]:hover,
+QPushButton#connectBtn[connectionState="error"]:hover {
+    background: {{DANGER_ACTION_HOVER}};
+}
+
+QPushButton#connectBtn:focus {
+    border: {{FOCUS_BORDER_WIDTH}}px solid {{FG_PRIMARY}};
+}
+
+QPushButton#allOffButton {
+    color: {{DANGER_TEXT}};
+    background: {{DANGER_SURFACE}};
+    border: {{BORDER_WIDTH}}px solid {{DANGER_BORDER}};
+    border-radius: {{CONTROL_RADIUS}}px;
+    padding: 0;
+    letter-spacing: 1px;
+}
+
+QPushButton#allOffButton:hover {
+    color: {{FG_ON_DANGER}};
+    background: {{DANGER_ACTION_STRONG}};
+    border-color: {{STATUS_ERROR}};
+}
+
+QPushButton#allOffButton:pressed {
+    background: {{DANGER_ACTION_PRESSED}};
+}
+
+QPushButton#allOffButton:focus {
+    border: {{FOCUS_BORDER_WIDTH}}px solid {{DANGER_FOCUS}};
+}
+
+QPushButton#primary {
+    color: {{FG_ON_ACCENT}};
+    background: {{ACCENT}};
+    border-color: {{ACCENT}};
+}
+
+QPushButton#secondaryAction {
+    color: {{FG_SECONDARY}};
+    background: {{BG_CONTROL}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+}
+
+QPushButton#secondaryAction:hover {
+    color: {{FG_PRIMARY}};
+    background: {{BG_CARD_HOVER}};
+    border-color: {{ACCENT}};
+}
+
+QPushButton#secondaryAction:pressed {
+    background: {{BG_SUB_CARD}};
+}
+
+QPushButton#secondaryAction:focus {
+    border: {{FOCUS_BORDER_WIDTH}}px solid {{ACCENT}};
+}
+
+QPushButton#primary:hover { background: {{ACCENT_HOVER}}; }
+QPushButton#primary:pressed { background: {{ACCENT_PRESSED}}; }
+
+QPushButton#primary:focus {
+    border: {{FOCUS_BORDER_WIDTH}}px solid {{FG_PRIMARY}};
+}
+
+QPushButton#primary:disabled,
+QPushButton#allOffButton:disabled {
+    color: {{FG_DISABLED}};
+    background: {{BG_SUB_CARD}};
+    border-color: {{BORDER}};
+}
+
+/* ---- 通用按钮 ---- */
+QPushButton {
+    background: {{BG_CONTROL}};
+    color: {{FG_PRIMARY}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+    border-radius: {{CONTROL_RADIUS}}px;
+    padding: 8px 18px;
+    font-weight: 600;
+}
+
+QPushButton:hover {
+    background: {{BG_CARD_HOVER}};
+    border-color: {{FG_DISABLED}};
+}
+
+QPushButton:pressed {
+    background: {{BG_SUB_CARD}};
+}
+
+QPushButton:focus {
+    border: {{FOCUS_BORDER_WIDTH}}px solid {{ACCENT}};
+}
+
+QPushButton:disabled {
+    color: {{FG_DISABLED}};
+    background: {{BG_SUB_CARD}};
+    border-color: {{BORDER}};
+}
+
+/* ---- 输入 ---- */
+QLineEdit, QPlainTextEdit, QTextEdit, QSpinBox, QDoubleSpinBox, QComboBox {
+    background: {{BG_INPUT}};
+    color: {{FG_PRIMARY}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER}};
+    border-radius: {{CONTROL_RADIUS}}px;
+    padding: 8px 12px;
+    selection-background-color: {{ACCENT}};
+    selection-color: {{BG_BASE}};
+    font-family: "{{FONT_MONO}}";
+    font-size: 13px;
+}
+
+QLineEdit:focus, QPlainTextEdit:focus, QTextEdit:focus,
+QSpinBox:focus, QDoubleSpinBox:focus, QComboBox:focus {
+    border-color: {{ACCENT}};
+}
+
+QLineEdit:disabled, QPushButton:disabled {
+    color: {{FG_DISABLED}};
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 24px;
+}
+
+QComboBox QAbstractItemView {
+    background: {{BG_CARD}};
+    color: {{FG_PRIMARY}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER}};
+    border-radius: {{CONTROL_RADIUS}}px;
+    padding: 4px;
+    selection-background-color: {{ACCENT}};
+    selection-color: {{BG_BASE}};
+    outline: 0;
+}
+
+/* ---- CheckBox ---- */
+QCheckBox {
+    background: transparent;
+    color: {{FG_PRIMARY}};
+    spacing: 8px;
+}
+
+QCheckBox::indicator {
+    width: 16px; height: 16px;
+    background: {{BG_INPUT}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+    border-radius: 3px;
+}
+QCheckBox::indicator:hover { border-color: {{ACCENT}}; }
+QCheckBox::indicator:checked {
+    background: {{ACCENT}};
+    border-color: {{ACCENT}};
+}
+QCheckBox:focus { color: {{ACCENT}}; }
+QCheckBox:disabled { color: {{FG_DISABLED}}; }
+QCheckBox::indicator:disabled {
+    background: {{BG_SUB_CARD}};
+    border-color: {{BORDER}};
+}
+
+/* ---- Radio ---- */
+QRadioButton {
+    background: transparent;
+    color: {{FG_PRIMARY}};
+    spacing: 8px;
+}
+QRadioButton::indicator {
+    width: 16px; height: 16px;
+    background: {{BG_INPUT}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+    border-radius: {{CONTROL_RADIUS}}px;
+}
+QRadioButton::indicator:hover { border-color: {{ACCENT}}; }
+QRadioButton::indicator:checked {
+    background: {{BG_INPUT}};
+    border: 4px solid {{ACCENT}};
+}
+QRadioButton:focus { color: {{ACCENT}}; }
+QRadioButton:disabled { color: {{FG_DISABLED}}; }
+QRadioButton::indicator:disabled {
+    background: {{BG_SUB_CARD}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER}};
+}
+
+/* ---- Segmented mode and channel chips ---- */
+QRadioButton#modeChip,
+QCheckBox#channelChip {
+    color: {{FG_SECONDARY}};
+    background: {{BG_CONTROL}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER_LIGHT}};
+    border-radius: {{CHIP_RADIUS}}px;
+    padding: 8px 16px;
+    spacing: 0;
+    font-family: "{{FONT_DISPLAY}}";
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+QRadioButton#modeChip::indicator,
+QCheckBox#channelChip::indicator {
+    width: 0;
+    height: 0;
+    border: none;
+    background: transparent;
+}
+
+QRadioButton#modeChip:hover,
+QCheckBox#channelChip:hover {
+    color: {{FG_PRIMARY}};
+    background: {{BG_CARD_HOVER}};
+    border-color: {{FG_DISABLED}};
+}
+
+QRadioButton#modeChip:checked,
+QCheckBox#channelChip:checked {
+    color: {{ACCENT}};
+    background: {{ACCENT_DIM}};
+    border-color: {{ACCENT}};
+}
+
+QRadioButton#modeChip:focus,
+QCheckBox#channelChip:focus {
+    border: {{FOCUS_BORDER_WIDTH}}px solid {{ACCENT}};
+}
+
+QRadioButton#modeChip:disabled,
+QCheckBox#channelChip:disabled {
+    color: {{FG_DISABLED}};
+    background: {{BG_SUB_CARD}};
+    border-color: {{BORDER}};
+}
+
+/* ---- 文字 ---- */
+QLabel {
+    color: {{FG_PRIMARY}};
+    background: transparent;
+    border: none;
+}
+
+QLabel#sectionTitle {
+    color: {{ACCENT}};
+    font-family: "{{FONT_DISPLAY}}";
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+QLabel#secondary {
+    color: {{FG_SECONDARY}};
+    font-family: "{{FONT_MONO}}";
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* ---- 状态芯片 (STATUS 卡) ---- */
+QLabel#statusChip {
+    color: {{FG_SECONDARY}};
+    background: {{BG_SUB_CARD}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER}};
+    border-radius: {{CHIP_RADIUS}}px;
+    padding: 6px 12px;
+    font-family: "{{FONT_MONO}}";
+    font-size: 12px;
+    font-weight: 700;
+}
+
+QLabel#statusChip[chipState="on"] {
+    color: {{ACCENT}};
+    background: {{BG_ACCENT_SOFT}};
+    border-color: {{BORDER_TEAL}};
+}
+
+QLabel#statusChip[chipState="error"] {
+    color: {{STATUS_ERROR}};
+    border-color: {{STATUS_ERROR_BORDER}};
+}
+
+QLabel#statusChip[chipState="warn"] {
+    color: {{STATUS_WARN}};
+    border-color: {{STATUS_WARN_BORDER}};
+}
+
+QLabel#statusChip[chipState="info"] {
+    color: {{FG_PRIMARY}};
+    border-color: {{BORDER}};
+}
+
+/* ---- Slider (PWM 占空比) ---- */
+QSlider {
+    background: transparent;
+    border: none;
+}
+
+QSlider::groove:horizontal {
+    background: {{BG_INPUT}};
+    border: {{BORDER_WIDTH}}px solid {{BORDER}};
+    height: 8px;
+    border-radius: 4px;
+}
+
+QSlider::sub-page:horizontal {
+    background: {{ACCENT}};
+    height: 8px;
+    border-radius: 4px;
+}
+
+QSlider::handle:horizontal {
+    background: {{SWITCH_KNOB_TOP}};
+    border: {{BORDER_WIDTH}}px solid {{SWITCH_KNOB_BORDER}};
+    width: 18px;
+    height: 18px;
+    margin: -6px 0;
+    border-radius: 9px;
+}
+
+QSlider::handle:horizontal:hover {
+    border-color: {{ACCENT}};
+}
+
+QSlider::handle:horizontal:disabled {
+    background: {{FG_DISABLED}};
+    border-color: {{BORDER}};
+}
+
+/* ---- 滚动条 ---- */
+QScrollBar:vertical {
+    background: transparent;
+    width: 8px;
+    margin: 4px;
+}
+QScrollBar::handle:vertical {
+    background: {{BORDER_LIGHT}};
+    border-radius: 4px;
+    min-height: 30px;
+}
+QScrollBar::handle:vertical:hover { background: {{FG_DISABLED}}; }
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical { height: 0; }
+QScrollBar:horizontal { background: transparent; height: 8px; margin: 4px; }
+QScrollBar::handle:horizontal {
+    background: {{BORDER_LIGHT}};
+    border-radius: 4px;
+    min-width: 30px;
+}
+QScrollBar::handle:horizontal:hover { background: {{FG_DISABLED}}; }
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { width: 0; }
+
+QPlainTextEdit, QTextEdit {
+    font-family: "{{FONT_MONO}}";
+    font-size: 12px;
+}
