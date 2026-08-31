@@ -193,7 +193,7 @@ class PassthroughPanel(QFrame):
         self.rx_view = QPlainTextEdit()
         self.rx_view.setReadOnly(True)
         self.rx_view.setMaximumBlockCount(2000)
-        self.rx_view.setFont(QFont(theme.FONT_MONO, 11))
+        self.rx_view.setFont(QFont(theme.FONT_MONO, 12))
         rx_col.addWidget(self.rx_view, 1)
 
         # RX panel footer

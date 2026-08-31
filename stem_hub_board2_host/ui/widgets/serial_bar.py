@@ -45,7 +45,7 @@ class _ChevronCombo(QComboBox):
             f"  border-radius: 10px;"
             f"  padding: 8px 36px 8px 16px;"
             f"  font-family: '{theme.FONT_MONO}';"
-            f"  font-size: 14px;"
+            f"  font-size: 15px;"
             f"}}"
             f"QComboBox:hover {{ border-color: {theme.BORDER_LIGHT}; }}"
             f"QComboBox:focus {{ border-color: {theme.ACCENT}; }}"

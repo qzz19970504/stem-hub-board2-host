@@ -35,7 +35,7 @@ def get_app() -> QApplication:
             mono=_font_families.mono,
             cjk=_font_families.cjk,
         )
-        application_font = QFont(_font_families.cjk, 11)
+        application_font = QFont(_font_families.cjk, 12)
         application_font.setStyleStrategy(QFont.StyleStrategy.PreferAntialias)
         _app.setFont(application_font)
     return _app

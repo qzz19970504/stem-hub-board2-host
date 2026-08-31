@@ -53,7 +53,7 @@ class PwmCard(QFrame):
         value_row = QHBoxLayout()
         self.value_label = QLabel("PWM 0%")
         f = self.value_label.font()
-        f.setPointSize(20)
+        f.setPointSize(22)
         f.setBold(True)
         self.value_label.setFont(f)
         value_row.addWidget(self.value_label)

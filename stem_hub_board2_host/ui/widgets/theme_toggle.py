@@ -77,7 +77,7 @@ class ThemeToggleButton(QAbstractButton):
             label = "NIGHT"
 
         font = QFont(theme.FONT_DISPLAY)
-        font.setPointSize(11)
+        font.setPointSize(12)
         font.setBold(True)
         p.setFont(font)
         p.setPen(QColor(theme.FG_PRIMARY))

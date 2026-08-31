@@ -83,7 +83,7 @@ class ConsoleTab(QWidget):
             "未连接：选择串口并点击 CONNECT (固定 9600 8N1)"
         )
         self.conn_hint.setObjectName("secondary")
-        self.conn_hint.setFixedHeight(22)
+        self.conn_hint.setFixedHeight(24)
         outer.addWidget(self.conn_hint)
 
         # 信号

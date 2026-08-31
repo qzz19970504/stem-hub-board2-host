@@ -61,7 +61,7 @@ class AtConsole(QFrame):
         )
         self.log_view.setFrameShape(QFrame.Shape.NoFrame)
         f_log = QFont(theme.FONT_MONO)
-        f_log.setPointSize(13)
+        f_log.setPointSizeF(13.5)
         self.log_view.setFont(f_log)
         outer.addWidget(self.log_view, 1)
 
@@ -75,7 +75,7 @@ class AtConsole(QFrame):
         # > 提示符
         self.prompt = QLabel(">")
         f_p = QFont(theme.FONT_MONO)
-        f_p.setPointSize(16)
+        f_p.setPointSize(17)
         f_p.setBold(True)
         self.prompt.setFont(f_p)
         self.prompt.setFixedWidth(18)
@@ -87,7 +87,7 @@ class AtConsole(QFrame):
         self.input_edit.returnPressed.connect(self._on_send)
         self.input_edit.setFixedHeight(theme.CONTROL_HEIGHT)
         f_in = QFont(theme.FONT_MONO)
-        f_in.setPointSize(13)
+        f_in.setPointSize(14)
         self.input_edit.setFont(f_in)
         send_row.addWidget(self.input_edit, 1)
 
@@ -98,7 +98,7 @@ class AtConsole(QFrame):
         self.send_btn.setFixedHeight(theme.CONTROL_HEIGHT)
         self.send_btn.setMinimumWidth(110)
         f_btn = QFont(theme.FONT_DISPLAY)
-        f_btn.setPointSize(13)
+        f_btn.setPointSize(14)
         f_btn.setBold(True)
         self.send_btn.setFont(f_btn)
         self.send_btn.clicked.connect(self._on_send)
